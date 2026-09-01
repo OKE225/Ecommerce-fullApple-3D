@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -193,9 +194,9 @@ export default function SignUpPage() {
         <CardFooter className="flex flex-col space-y-2">
           <p className="text-sm text-center text-muted-foreground">
             Already have an account?{" "}
-            <a href="/login" className="text-primary hover:underline">
+            <Link href="/login" className="text-primary hover:underline">
               Log In
-            </a>
+            </Link>
           </p>
         </CardFooter>
       </Card>

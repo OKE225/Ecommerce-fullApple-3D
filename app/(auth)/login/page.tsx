@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -114,9 +115,9 @@ export default function LoginPage() {
         <CardFooter className="flex flex-col space-y-2">
           <p className="text-sm text-center text-muted-foreground">
             Don&apos;t have an account?{" "}
-            <a href="/signup" className="text-primary hover:underline">
+            <Link href="/signup" className="text-primary hover:underline">
               Sign Up
-            </a>
+            </Link>
           </p>
         </CardFooter>
       </Card>
