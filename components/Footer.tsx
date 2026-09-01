@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { CodeXml, Globe, Heart } from "lucide-react";
 import { Badge } from "./ui/badge";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -48,25 +49,25 @@ export default function Footer() {
             <h3 className="mb-3 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-muted-foreground transition hover:text-foreground">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-muted-foreground transition hover:text-foreground">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-muted-foreground transition hover:text-foreground">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -74,17 +75,23 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 text-lg font-semibold">Connect</h3>
             <div className="flex gap-3">
-              <Button variant="outline" size="icon">
-                <a href="https://github.com/OKE225" target="_blank">
+              <Link
+                href="https://github.com/OKE225"
+                className="rounded-full"
+                target="_blank">
+                <Button variant="outline" size="icon">
                   <CodeXml className="h-4 w-4" />
-                </a>
-              </Button>
+                </Button>
+              </Link>
 
-              <Button variant="outline" size="icon">
-                <a href="https://pj-portfolio-cv.vercel.app/" target="_blank">
+              <Link
+                href="https://pj-portfolio-cv.vercel.app/"
+                className="rounded-full"
+                target="_blank">
+                <Button variant="outline" size="icon">
                   <Globe className="h-4 w-4" />
-                </a>
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

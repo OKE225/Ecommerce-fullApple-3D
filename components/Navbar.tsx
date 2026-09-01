@@ -4,41 +4,42 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import CategoryMenu from "./CategoryMenu";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="mt-4">
       <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-1">
           <Apple />
           <span className="text-md font-semibold">
-            <span className="text-zinc-500">full</span>Apple
+            <span className="text-zinc-500 font-normal">full</span>Apple
           </span>
-        </div>
+        </Link>
 
         <div className="hidden flex-1 px-4 md:block">
           <SearchInput />
         </div>
 
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="relative">
-            <a href="/basket">
+          <Link href="/basket" className="rounded-full">
+            <Button variant="ghost" size="icon" className="relative">
               <ShoppingBasket />
               <Badge
                 variant="destructive"
                 className="absolute -right-1 -top-1 h-5 min-w-5 px-1 text-xs">
                 0
               </Badge>
-            </a>
-          </Button>
+            </Button>
+          </Link>
 
           <Separator orientation="vertical" className="mx-1 h-6 my-auto" />
 
-          <Button variant="ghost" size="icon">
-            <a href="/profile">
+          <Link href="/profile" className="rounded-full">
+            <Button variant="ghost" size="icon">
               <CircleUserRound />
-            </a>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </div>
 
