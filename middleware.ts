@@ -1,6 +1,8 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const protectedPaths = ["/profile", "/basket"];
+
 export async function middleware(request: NextRequest) {
   const supabaseResponse = NextResponse.next({ request });
 
@@ -34,8 +36,12 @@ export async function middleware(request: NextRequest) {
   const isAuthOnlyPage =
     pathname.startsWith("/login") || pathname.startsWith("/signup");
 
+  const isProtectedPath = protectedPaths.some(
+    (path) => pathname === path || pathname.startsWith(`${path}/`),
+  );
+
   // Not logged in on a page other than "/", "/login", "/signup" -> /login
-  if (!user && !isAuthOnlyPage && pathname !== "/") {
+  if (!user && isProtectedPath) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
