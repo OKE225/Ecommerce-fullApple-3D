@@ -1,17 +1,20 @@
-"use client";
+import { getAllProducts } from "@/lib/data/products";
 
-import ProductItem from "@/components/ProductItem";
+export default async function Home() {
+  const products = await getAllProducts();
 
-export default function Home() {
   return (
     <main>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint obcaecati,
-        ratione illum distinctio facilis impedit quisquam tempore ab delectus
-        veritatis nisi maxime quas modi optio eligendi praesentium natus animi
-        a.
-      </p>
-      <ProductItem />
+      <h2 className="text-2xl font-bold mt-5 mb-2">Products</h2>
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+        {products.map((product) => (
+          <div key={product.id} className="bg-slate-200 rounded-xl p-5">
+            <h3>{product.name}</h3>
+            <p>{product.price} $</p>
+            <p>Stock: {product.stock}</p>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

@@ -1,7 +1,20 @@
-import React from "react";
+import { getProductsByCategory } from "@/lib/data/products";
 
-const iPhoneCategoryPage = () => {
-  return <div>iPhoneCategoryPage</div>;
-};
+export default async function iPhoneCategoryPage() {
+  const products = await getProductsByCategory("iPhone");
 
-export default iPhoneCategoryPage;
+  return (
+    <div>
+      <h2 className="text-2xl font-bold mt-5 mb-2">Products</h2>
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+        {products.map((product) => (
+          <div key={product.id} className="bg-slate-200 rounded-xl p-5">
+            <h3>{product.name}</h3>
+            <p>{product.price} $</p>
+            <p>Stock: {product.stock}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
