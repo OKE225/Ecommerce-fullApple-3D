@@ -25,14 +25,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={cn(
-        "h-full",
         "antialiased",
         geistSans.variable,
         geistMono.variable,
         "font-sans",
         inter.variable,
       )}>
-      <body className="min-h-full flex flex-col bg-linear-to-b from-zinc-50 to-zinc-100">
+      <body className="min-h-full bg-zinc-50">
         <div className="w-[95%] max-w-7xl mx-auto">{children}</div>
       </body>
     </html>
