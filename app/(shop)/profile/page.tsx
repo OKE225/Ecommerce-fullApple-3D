@@ -16,7 +16,7 @@ const ProfilePage = () => {
     const supabase = createClient();
     const { error } = await supabase.auth.signOut();
     if (error) {
-      console.error("Błąd wylogowania:", error.message);
+      console.error("Logout error:", error.message);
       setIsSigningOut(false);
       return;
     }
