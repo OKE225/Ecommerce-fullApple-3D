@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "font-sans",
         inter.variable,
       )}>
-      <body className="min-h-full bg-zinc-50">
+      <body className="min-h-full bg-zinc-50 selection:bg-sky-600/80 selection:text-cyan-300">
         <div className="w-[95%] max-w-7xl mx-auto">{children}</div>
       </body>
     </html>
