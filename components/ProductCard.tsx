@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import Image from "next/image";
+import { ShopProduct } from "@/types/ProductsTypes";
 
-interface Props {
-  product: { id: string; name: string; price: number; imageUrl: string };
-}
-
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product }: { product: ShopProduct }) => {
   return (
     <Link href={`/product/${product.id}`}>
       <Card className="hover:shadow-lg transition-shadow cursor-pointer">
