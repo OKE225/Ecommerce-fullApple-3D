@@ -48,6 +48,7 @@ export async function getAllProducts() {
       imageUrl: p.image_url
         ? `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${p.image_url}`
         : null,
+      category: Array.isArray(p.category) ? p.category[0] : p.category,
     })) ?? [];
 
   return products;
@@ -99,6 +100,7 @@ export async function getProductsByCategory(categoryName: string) {
       imageUrl: p.image_url
         ? `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${p.image_url}`
         : null,
+      category: Array.isArray(p.category) ? p.category[0] : p.category,
     })) ?? [];
 
   return products;
@@ -149,6 +151,7 @@ export async function getProductByID(id: string) {
       imageUrl: p.image_url
         ? `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${p.image_url}`
         : null,
+      category: Array.isArray(p.category) ? p.category[0] : p.category,
     })) ?? [];
 
   return products;
