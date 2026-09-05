@@ -2,12 +2,13 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import Image from "next/image";
 import { ShopProduct } from "@/types/ProductsTypes";
+import AddToCartButton from "./AddToCartButton";
 
 const ProductCard = ({ product }: { product: ShopProduct }) => {
   return (
     <Link href={`/product/${product.id}`}>
-      <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-        <CardContent className="p-4">
+      <Card className="hover:shadow-lg transition-shadow">
+        <CardContent className="px-4">
           <div className="aspect-square overflow-hidden rounded-md mb-3">
             {product.imageUrl ? (
               <Image
@@ -26,7 +27,9 @@ const ProductCard = ({ product }: { product: ShopProduct }) => {
           </div>
 
           <CardTitle className="text-base">{product.name}</CardTitle>
-          <CardDescription>{product.price} $</CardDescription>
+          <CardDescription>${product.price}</CardDescription>
+
+          <AddToCartButton product={product} />
         </CardContent>
       </Card>
     </Link>
