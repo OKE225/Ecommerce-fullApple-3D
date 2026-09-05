@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -31,8 +32,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "font-sans",
         inter.variable,
       )}>
-      <body className="min-h-full bg-zinc-50 selection:bg-sky-600/80 selection:text-cyan-300">
-        <div className="w-[95%] max-w-7xl mx-auto">{children}</div>
+      <body className="min-h-full bg-zinc-50 selection:bg-sky-700/80 selection:text-cyan-300">
+        <div className="w-[95%] max-w-7xl mx-auto">
+          <CartProvider>{children}</CartProvider>
+        </div>
       </body>
     </html>
   );
