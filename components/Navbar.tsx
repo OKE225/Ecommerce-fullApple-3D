@@ -1,12 +1,19 @@
-import { Apple, CircleUserRound, ShoppingBasket } from "lucide-react";
+"use client";
+
+import { Apple, CircleUserRound, ShoppingBag } from "lucide-react";
 import SearchInput from "./SearchInput";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import CategoryMenu from "./CategoryMenu";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
+  const { items } = useCart();
+
+  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <nav className="mt-4">
       <div className="flex items-center justify-between gap-4">
@@ -24,11 +31,11 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Link href="/basket" className="rounded-full">
             <Button variant="ghost" size="icon" className="relative">
-              <ShoppingBasket />
+              <ShoppingBag />
               <Badge
                 variant="destructive"
                 className="absolute -right-1 -top-1 h-5 min-w-5 px-1 text-xs">
-                0
+                {totalQuantity > 9 ? "+9" : totalQuantity}
               </Badge>
             </Button>
           </Link>
