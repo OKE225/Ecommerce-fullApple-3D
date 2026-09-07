@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export default function NotFound() {
   return (
-    <div className="flex h-125 flex-col items-center justify-center gap-6 text-center">
+    <div className="flex h-screen flex-col items-center justify-center gap-6 text-center">
       <div className="space-y-2">
         <h1 className="text-8xl font-bold text-rose-600">404</h1>
         <h2 className="text-3xl font-semibold text-rose-600">Page not found</h2>
