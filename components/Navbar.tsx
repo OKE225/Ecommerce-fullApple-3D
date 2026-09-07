@@ -1,15 +1,17 @@
 "use client";
 
-import { Apple, ShoppingBag, UserRound } from "lucide-react";
+import { Apple, ShoppingBag, UserRound, LayoutDashboard } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import CategoryMenu from "./CategoryMenu";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useUserRole } from "@/context/UserRoleContext";
 
 const Navbar = () => {
   const { items } = useCart();
+  const { role } = useUserRole();
 
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -24,6 +26,18 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center gap-2">
+          {role === "admin" && (
+            <>
+              <Link href="/dashboard" className="rounded-full">
+                <Button variant="ghost" size="icon">
+                  <LayoutDashboard />
+                </Button>
+              </Link>
+
+              <Separator orientation="vertical" className="h-6 my-auto" />
+            </>
+          )}
+
           <Link href="/basket" className="rounded-full">
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingBag />
