@@ -10,8 +10,10 @@ const CategoryMenu = () => {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <CategoryMenuItem icon={House} href="/" isActive={pathname === "/"}>
-        Home
+      <CategoryMenuItem
+        href="/category/all"
+        isActive={pathname === "/category/all"}>
+        All
       </CategoryMenuItem>
 
       <Separator orientation="vertical" className="h-6 my-auto" />

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 interface Props {
   children: React.ReactNode;
-  icon: ForwardRefExoticComponent<
+  icon?: ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
   >;
   href: string;
@@ -24,9 +24,9 @@ const CategoryMenuItem = ({
       href={href}
       className={cn(
         buttonVariants({ variant: isActive ? "default" : "secondary" }),
-        "gap-2 font-medium",
+        "font-medium",
       )}>
-      <Icon />
+      {Icon && <Icon />}
       <span>{children}</span>
     </Link>
   );

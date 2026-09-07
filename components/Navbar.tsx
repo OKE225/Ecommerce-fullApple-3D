@@ -1,7 +1,6 @@
 "use client";
 
-import { Apple, CircleUserRound, ShoppingBag } from "lucide-react";
-import SearchInput from "./SearchInput";
+import { Apple, ShoppingBag, UserRound } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,10 +23,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <div className="hidden flex-1 px-4 md:block">
-          <SearchInput />
-        </div>
-
         <div className="flex items-center gap-2">
           <Link href="/basket" className="rounded-full">
             <Button variant="ghost" size="icon" className="relative">
@@ -44,19 +39,15 @@ const Navbar = () => {
 
           <Link href="/profile" className="rounded-full">
             <Button variant="ghost" size="icon">
-              <CircleUserRound />
+              <UserRound />
             </Button>
           </Link>
         </div>
       </div>
 
-      <div className="md:hidden">
-        <SearchInput />
-      </div>
+      <Separator className="my-4" />
 
-      <Separator className="my-5" />
-
-      <div className="hidden md:block">
+      <div className="block">
         <CategoryMenu />
       </div>
     </nav>
