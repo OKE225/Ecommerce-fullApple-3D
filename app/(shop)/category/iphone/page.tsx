@@ -1,4 +1,4 @@
-import ProductsGridWithSort from "@/components/ProductsGridWithSort";
+import ProductsWithSortAndSearch from "@/components/ProductsWithSortAndSearch";
 import { getProductsByCategory } from "@/lib/data/products";
 
 export default async function iPhoneCategoryPage() {
@@ -10,7 +10,7 @@ export default async function iPhoneCategoryPage() {
         <h2 className="text-2xl font-bold">Products</h2>
       </div>
 
-      <ProductsGridWithSort products={products} />
+      <ProductsWithSortAndSearch products={products} />
     </div>
   );
 }

@@ -4,14 +4,30 @@ import ProductCard from "@/components/ProductCard";
 import { ShopProduct } from "@/types/ProductsTypes";
 import { useState, useMemo } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "./ui/select";
+import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
+import { SearchIcon } from "lucide-react";
 
 type SortOption = "price-asc" | "price-desc" | "name-asc" | "name-desc";
 
-const ProductsGridWithSort = ({ products }: { products: ShopProduct[] }) => {
+const ProductsWithSortAndSearch = ({
+  products,
+}: {
+  products: ShopProduct[];
+}) => {
   const [sort, setSort] = useState<SortOption>("price-desc");
+  const [search, setSearch] = useState("");
 
   const sortedProducts = useMemo(() => {
-    const arr = [...products];
+    let arr = [...products];
+
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      arr = arr.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q),
+      );
+    }
 
     switch (sort) {
       case "price-asc":
@@ -25,7 +41,7 @@ const ProductsGridWithSort = ({ products }: { products: ShopProduct[] }) => {
       default:
         return arr;
     }
-  }, [products, sort]);
+  }, [products, sort, search]);
 
   const sortLabels: Record<SortOption, string> = {
     "price-desc": "Price: High to Low",
@@ -36,8 +52,23 @@ const ProductsGridWithSort = ({ products }: { products: ShopProduct[] }) => {
 
   return (
     <div>
-      <div className="flex justify-end mb-5">
-        <Select value={sort} onValueChange={(v) => setSort(v as SortOption)}>
+      <div className="flex items-center justify-between gap-4 mb-15">
+        <InputGroup>
+          <InputGroupInput
+            type="text"
+            className="w-full"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search products..."
+          />
+          <InputGroupAddon>
+            <SearchIcon />
+          </InputGroupAddon>
+        </InputGroup>
+
+        <Select
+          value={sort}
+          onValueChange={(value) => setSort(value as SortOption)}>
           <SelectTrigger className="w-50">{sortLabels[sort]}</SelectTrigger>
           <SelectContent>
             <SelectItem value="price-desc">Price: High to Low</SelectItem>
@@ -57,4 +88,4 @@ const ProductsGridWithSort = ({ products }: { products: ShopProduct[] }) => {
   );
 };
 
-export default ProductsGridWithSort;
+export default ProductsWithSortAndSearch;
