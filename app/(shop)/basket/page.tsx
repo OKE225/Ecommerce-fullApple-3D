@@ -65,7 +65,7 @@ const BasketPage = () => {
                       </p>
                     </div>
                     <Button
-                      variant="ghost"
+                      variant="destructive"
                       size="icon"
                       onClick={() => removeItem(item.product.id)}
                       className="h-8 w-8">
@@ -100,7 +100,7 @@ const BasketPage = () => {
                     </div>
 
                     {/* Subtotal for this item */}
-                    <span className="text-sm font-medium">
+                    <span className="text-base font-medium">
                       ${(item.product.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
