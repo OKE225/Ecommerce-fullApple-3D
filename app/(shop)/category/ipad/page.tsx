@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard";
+import ProductsGridWithSort from "@/components/ProductsGridWithSort";
 import { getProductsByCategory } from "@/lib/data/products";
 
 export default async function iPadCategoryPage() {
@@ -6,12 +6,11 @@ export default async function iPadCategoryPage() {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mt-5 mb-2">Products</h2>
-      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div className="flex items-center justify-between mb-5">
+        <h2 className="text-2xl font-bold">Products</h2>
       </div>
+
+      <ProductsGridWithSort products={products} />
     </div>
   );
 }
