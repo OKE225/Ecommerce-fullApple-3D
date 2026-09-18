@@ -7,8 +7,8 @@ import AddToCartButton from "./AddToCartButton";
 const ProductCard = ({ product }: { product: ShopProduct }) => {
   return (
     <Link href={`/product/${product.id}`}>
-      <Card className="hover:shadow-lg transition-shadow">
-        <CardContent className="px-4">
+      <Card className="hover:shadow-lg transition-shadow" size="sm">
+        <CardContent>
           <div className="aspect-square overflow-hidden rounded-md mb-3">
             {product.imageUrl ? (
               <Image
@@ -16,8 +16,8 @@ const ProductCard = ({ product }: { product: ShopProduct }) => {
                 alt={product.name}
                 className="h-full w-full object-cover"
                 loading="lazy"
-                width={300}
-                height={300}
+                width={1225}
+                height={1225}
               />
             ) : (
               <div className="h-full w-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm">

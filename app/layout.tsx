@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         inter.variable,
       )}>
       <body className="min-h-full bg-zinc-50 selection:bg-sky-700/80 selection:text-cyan-300">
-        <div className="w-[95%] max-w-7xl mx-auto">
+        <div className="w-[90%] max-w-7xl mx-auto">
           <UserRoleProvider role={role}>
             <CartProvider>{children}</CartProvider>
           </UserRoleProvider>

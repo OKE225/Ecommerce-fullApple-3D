@@ -33,9 +33,8 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 text-lg font-semibold">About This Project</h3>
             <p className="text-sm text-muted-foreground">
-              This is a demo e-commerce project built with Next.js, shadcn/ui,
-              and SQLite. It showcases modern web development practices and UI
-              design
+              This is a demo e-commerce project built with Next.js, shadcn/ui.
+              It showcases modern web development practices and UI design
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
               Created by{" "}

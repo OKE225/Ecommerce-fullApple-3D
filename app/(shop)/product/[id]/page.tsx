@@ -1,6 +1,5 @@
 import AddToCartButton from "@/components/AddToCartButton";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -12,10 +11,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getProductByID } from "@/lib/data/products";
-import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import React from "react";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -32,7 +29,7 @@ export default async function ProductPage({ params }: PageProps) {
   }
 
   return (
-    <main className="max-w-5xl mx-auto p-6 space-y-6">
+    <main className="max-w-5xl mx-auto space-y-6">
       <div className="flex items-center gap-3">
         <Badge variant="secondary">{product.category.name}</Badge>
         <h1 className="text-2xl font-bold">{product.name}</h1>
@@ -125,7 +122,6 @@ export default async function ProductPage({ params }: PageProps) {
                 <TableCell>{product.screen_type}</TableCell>
               </TableRow>
 
-              {/* Performance */}
               <TableRow>
                 <TableCell className="font-medium">CPU</TableCell>
                 <TableCell>{product.cpu}</TableCell>
@@ -135,7 +131,6 @@ export default async function ProductPage({ params }: PageProps) {
                 <TableCell>{product.ram_gb} GB</TableCell>
               </TableRow>
 
-              {/* Battery */}
               <TableRow>
                 <TableCell className="font-medium">Battery capacity</TableCell>
                 <TableCell>{product.battery_size} mAh</TableCell>
@@ -145,7 +140,6 @@ export default async function ProductPage({ params }: PageProps) {
                 <TableCell>{product.charging_wattage} W</TableCell>
               </TableRow>
 
-              {/* Dimensions & weight */}
               <TableRow>
                 <TableCell className="font-medium">Height</TableCell>
                 <TableCell>{product.height_mm} mm</TableCell>
