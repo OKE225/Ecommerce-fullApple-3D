@@ -96,21 +96,21 @@ const IPhone17ProMaxSection = () => {
             {/* Rear light – illuminates the casing (key backlight) */}
             <directionalLight
               position={[1, 0.1, 0]}
-              intensity={0.5}
+              intensity={0.75}
               color={"#F3A874"}
             />
 
             {/* Additional light at the rear, on the side (rim light) */}
             <directionalLight
               position={[1, -0.1, 1]}
-              intensity={1}
+              intensity={0.8}
               color={"#D15B2E"}
             />
 
             {/* The second rear light on the other side */}
             <directionalLight
               position={[1, -0.1, -1]}
-              intensity={1}
+              intensity={0.8}
               color={"#D15B2E"}
             />
 
