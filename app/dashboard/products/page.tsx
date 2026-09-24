@@ -39,7 +39,7 @@ export default async function ProductsPage() {
         </div>
         <Link href="/dashboard/products/create">
           <Button>
-            <Plus className="mr-2 h-4 w-4" />
+            <Plus className="h-4 w-4" />
             Add Product
           </Button>
         </Link>

@@ -36,7 +36,7 @@ export default function DashboardLayout({
           <Link href="/dashboard/products/create" className="rounded-full">
             <Button>
               <PlusCircle className="h-4 w-4" />
-              Add Product
+              Add
             </Button>
           </Link>
         </div>

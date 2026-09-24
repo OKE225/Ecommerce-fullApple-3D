@@ -176,10 +176,10 @@ export default function DashboardClient({
         </Select>
       </div>
 
-      <div className="grid gap-4 grid-cols-4 max-xl:grid-cols-2 max-sm:grid-cols-1">
+      <div className="grid gap-4 grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
         <Card className="border-l-4 bg-blue-50 border-l-blue-500">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">
+            <CardTitle className="text-sm font-medium">
               Total products
             </CardTitle>
             <Package className="h-5 w-5 text-blue-500" />
@@ -192,7 +192,7 @@ export default function DashboardClient({
 
         <Card className="border-l-4 bg-green-50 border-l-green-500">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">
+            <CardTitle className="text-sm font-medium">
               Estimated revenue
             </CardTitle>
             <DollarSign className="h-5 w-5 text-green-500" />
@@ -209,9 +209,7 @@ export default function DashboardClient({
 
         <Card className="border-l-4 bg-amber-50 border-l-amber-500">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">
-              Average price
-            </CardTitle>
+            <CardTitle className="text-sm font-medium">Average price</CardTitle>
             <TrendingUp className="h-5 w-5 text-amber-500" />
           </CardHeader>
           <CardContent>
@@ -224,7 +222,7 @@ export default function DashboardClient({
 
         <Card className="border-l-4 bg-indigo-50 border-l-indigo-500">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">Total stock</CardTitle>
+            <CardTitle className="text-sm font-medium">Total stock</CardTitle>
             <ShoppingCart className="h-5 w-5 text-indigo-500" />
           </CardHeader>
           <CardContent>

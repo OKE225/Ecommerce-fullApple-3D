@@ -16,7 +16,7 @@ const Navbar = () => {
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <nav className="mt-4">
+    <nav className="pt-4">
       <div className="flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-1">
           <Apple />

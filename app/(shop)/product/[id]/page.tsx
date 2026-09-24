@@ -22,7 +22,7 @@ export default async function ProductPage({ params }: PageProps) {
   const { id } = await params;
 
   const products = await getProductByID(id);
-  const product = Array.isArray(products) ? products[0] : products;
+  const product = products[0];
 
   if (!product) {
     notFound();
