@@ -156,3 +156,19 @@ export async function getProductByID(id: string) {
 
   return products;
 }
+
+export async function getAllCategories() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("categories")
+    .select(`id, name`)
+    .order("id");
+
+  if (error) {
+    console.error("Supabase error:", error);
+    throw new Error(`Failed to get categories from database: ${error.message}`);
+  }
+
+  return data;
+}
