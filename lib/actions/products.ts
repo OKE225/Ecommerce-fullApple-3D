@@ -162,3 +162,19 @@ export async function updateProduct(
   revalidatePath("/dashboard/products");
   revalidatePath(`/dashboard/products/${productId}`);
 }
+
+export async function deleteProduct(productId: number) {
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from("products")
+    .delete()
+    .eq("id", productId);
+
+  if (error) {
+    console.error("Error deleting product:", error);
+    throw error;
+  }
+
+  revalidatePath("/dashboard/products");
+}

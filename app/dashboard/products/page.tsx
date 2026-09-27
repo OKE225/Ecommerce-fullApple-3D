@@ -3,7 +3,7 @@ import { getAllProducts } from "@/lib/data/products";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Pencil, Trash2, Plus } from "lucide-react";
+import { Pencil, Plus } from "lucide-react";
 import Image from "next/image";
 import {
   Table,
@@ -21,6 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import DeleteProductDialog from "@/components/DeleteProductDialog";
 
 export default async function ProductsPage() {
   const role = await getUserRole();
@@ -77,6 +78,7 @@ export default async function ProductsPage() {
                             fill
                             className="object-cover"
                             alt={product.name}
+                            sizes="1000px"
                           />
                         </div>
                       </TableCell>
@@ -112,12 +114,10 @@ export default async function ProductsPage() {
                               <Pencil className="h-4 w-4" />
                             </Button>
                           </Link>
-                          <Link
-                            href={`/dashboard/products/${product.id}/delete`}>
-                            <Button variant="destructive" size="icon">
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-                          </Link>
+                          <DeleteProductDialog
+                            productId={product.id}
+                            productName={product.name}
+                          />
                         </div>
                       </TableCell>
                     </TableRow>
