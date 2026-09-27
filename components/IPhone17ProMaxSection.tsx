@@ -83,7 +83,7 @@ const IPhone17ProMaxSection = () => {
         </div>
 
         <div className="bg-linear-to-br from-[#ca7d46]/20 to-[#D15B2E]/40 rounded-4xl max-lg:h-[65vh] border border-[#F3A874]/60">
-          <Canvas camera={{ position: [-Math.PI, 0.7, 0], fov: 50 }}>
+          <Canvas camera={{ position: [Math.PI, 0.7, 0], fov: 50 }}>
             <ambientLight />
 
             {/* Main front light */}
@@ -116,10 +116,10 @@ const IPhone17ProMaxSection = () => {
 
             <OrbitControls
               autoRotate
-              autoRotateSpeed={3}
+              autoRotateSpeed={3.5}
               enableDamping={false}
               enablePan={false}
-              enableRotate={false}
+              // enableRotate={false}
               enableZoom={false}
             />
 

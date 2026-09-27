@@ -132,7 +132,7 @@ const IPhone18ProMaxSection = () => {
               autoRotateSpeed={3}
               enableDamping={false}
               enablePan={false}
-              enableRotate={false}
+              // enableRotate={false}
               enableZoom={false}
             />
 
