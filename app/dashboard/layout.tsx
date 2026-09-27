@@ -22,13 +22,13 @@ export default function DashboardLayout({
           <Separator orientation="vertical" className="my-auto h-6" />
 
           <Link href="/dashboard" className="rounded-full">
-            <Button variant="ghost" size="icon">
+            <Button variant="outline" size="icon">
               <LayoutDashboard />
             </Button>
           </Link>
 
           <Link href="/dashboard/products" className="rounded-full">
-            <Button variant="ghost">
+            <Button variant="outline">
               <Package className="h-4 w-4" /> Products
             </Button>
           </Link>
