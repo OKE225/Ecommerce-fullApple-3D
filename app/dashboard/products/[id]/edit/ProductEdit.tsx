@@ -13,7 +13,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Image from "next/image";
 import { ShopProduct } from "@/types/ProductsTypes";
 import { useState } from "react";
 import {
@@ -26,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { updateProduct } from "@/lib/actions/products";
+import ImageUpload from "@/components/ImageUpload";
 
 interface Props {
   categories: {
@@ -58,6 +58,7 @@ interface ProductFormData {
 const ProductEdit = ({ categories, product }: Props) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
 
   const [formData, setFormData] = useState<ProductFormData>({
     category_id: product.category_id,
@@ -93,7 +94,7 @@ const ProductEdit = ({ categories, product }: Props) => {
     setIsLoading(true);
 
     try {
-      await updateProduct(product.id, formData);
+      await updateProduct(product.id, formData, imageFile);
       router.refresh();
       router.replace("/dashboard/products");
     } catch (error) {
@@ -135,23 +136,10 @@ const ProductEdit = ({ categories, product }: Props) => {
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardContent className="p-4">
-            {product.imageUrl ? (
-              <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  loading="eager"
-                  priority
-                />
-              </div>
-            ) : (
-              <div className="flex aspect-square items-center justify-center rounded-lg bg-muted text-muted-foreground">
-                No image available
-              </div>
-            )}
+            <ImageUpload
+              productImage={product.imageUrl}
+              onFileChange={setImageFile}
+            />
           </CardContent>
         </Card>
 
