@@ -16,7 +16,7 @@ const MacBookNeoSection = () => {
   return (
     <section className="w-full bg-linear-to-br from-[#F6FCA0] to-[#FFFFCD] rounded-4xl border-2 border-[#ECEF96]/50 shadow-lg shadow-zinc-100 p-6 selection:bg-lime-500/20! selection:text-lime-700!">
       <div className="grid grid-cols-2 gap-12 max-lg:grid-cols-1">
-        <div className="flex flex-col gap-5 py-32 max-lg:py-20">
+        <div className="flex flex-col justify-center gap-5 py-26 max-xl:py-12 max-lg:pt-5 max-lg:pb-0">
           <div className="flex items-center gap-2 text-[#5a6b1f]">
             <Laptop className="h-6 w-6" />
             <span className="text-sm font-medium uppercase tracking-wider">
@@ -76,7 +76,7 @@ const MacBookNeoSection = () => {
           </div>
         </div>
 
-        <div className="relative bg-linear-to-br from-[#F6FCA0]/70 to-[#ECEF96]/80 rounded-4xl max-lg:h-100 border border-[#ECEF96]/50">
+        <div className="relative bg-linear-to-br from-[#F6FCA0]/70 to-[#ECEF96]/80 rounded-4xl max-lg:w-full max-lg:mx-auto aspect-square my-auto border border-[#ECEF96]/50">
           <Image
             src="/macbook-neo.png"
             alt="Test image"

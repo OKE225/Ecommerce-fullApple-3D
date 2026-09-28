@@ -9,7 +9,7 @@ const CategoryMenu = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center justify-center gap-2 max-md:gap-10 max-sm:gap-4">
       <CategoryMenuItem
         icon={LayoutGrid}
         href="/category/all"
@@ -17,7 +17,10 @@ const CategoryMenu = () => {
         All
       </CategoryMenuItem>
 
-      <Separator orientation="vertical" className="h-6 my-auto" />
+      <Separator
+        orientation="vertical"
+        className="hidden h-6 my-auto md:block"
+      />
 
       <CategoryMenuItem
         icon={Smartphone}
@@ -26,7 +29,10 @@ const CategoryMenu = () => {
         iPhone
       </CategoryMenuItem>
 
-      <Separator orientation="vertical" className="h-6 my-auto" />
+      <Separator
+        orientation="vertical"
+        className="hidden h-6 my-auto md:block"
+      />
 
       <CategoryMenuItem
         icon={Laptop}
@@ -35,7 +41,10 @@ const CategoryMenu = () => {
         MacBook
       </CategoryMenuItem>
 
-      <Separator orientation="vertical" className="h-6 my-auto" />
+      <Separator
+        orientation="vertical"
+        className="hidden h-6 my-auto md:block"
+      />
 
       <CategoryMenuItem
         icon={Tablet}

@@ -18,7 +18,7 @@ const IPhone17ProMaxSection = () => {
   return (
     <section className="w-full bg-linear-to-br from-[#FD914B] to-[#EF7838] rounded-4xl border-2 border-[#D15B2E]/60 shadow-lg p-6 selection:bg-orange-700/30! selection:text-orange-900!">
       <div className="grid grid-cols-2 gap-12 max-lg:grid-cols-1">
-        <div className="flex flex-col gap-5 py-32 max-lg:py-20">
+        <div className="flex flex-col justify-center gap-5 py-32 max-lg:pt-10 max-lg:pb-0">
           <div className="flex items-center gap-2 text-[#fff9f5]">
             <Smartphone className="h-6 w-6 text-white" />
             <span className="text-sm font-medium uppercase tracking-wider text-white">
@@ -82,7 +82,7 @@ const IPhone17ProMaxSection = () => {
           </div>
         </div>
 
-        <div className="bg-linear-to-br from-[#ca7d46]/20 to-[#D15B2E]/40 rounded-4xl max-lg:h-[65vh] border border-[#F3A874]/60">
+        <div className="bg-linear-to-br from-[#ca7d46]/20 to-[#D15B2E]/40 rounded-4xl my-auto h-150 max-lg:h-[50vh] border border-[#F3A874]/60">
           <Canvas camera={{ position: [Math.PI, 0.7, 0], fov: 50 }}>
             <ambientLight />
 

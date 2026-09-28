@@ -44,15 +44,23 @@ export default function DeleteProductDialog({ productId, productName }: Props) {
       </Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle className="text-xl">Delete Product</DialogTitle>
-            <DialogDescription className="text-base">
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader className="space-y-3 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-destructive/10">
+                <Trash2 className="h-5 w-5 text-destructive" />
+              </div>
+              <DialogTitle className="text-xl font-semibold tracking-tight">
+                Delete Product
+              </DialogTitle>
+            </div>
+            <DialogDescription className="text-base leading-relaxed text-muted-foreground">
               Are you sure you want to delete{" "}
               <span className="font-semibold text-foreground">
                 {productName}
               </span>
-              ? This action cannot be undone.
+              ? This action cannot be undone and will permanently remove this
+              product from your catalog.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

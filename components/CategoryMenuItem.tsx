@@ -1,16 +1,13 @@
-import { LucideProps } from "lucide-react";
-import { ForwardRefExoticComponent, RefAttributes } from "react";
+import { LucideIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface Props {
-  children: React.ReactNode;
-  icon?: ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
-  >;
+  icon: LucideIcon;
   href: string;
   isActive: boolean;
+  children: React.ReactNode;
 }
 
 const CategoryMenuItem = ({
@@ -26,8 +23,8 @@ const CategoryMenuItem = ({
         buttonVariants({ variant: isActive ? "default" : "secondary" }),
         "font-medium",
       )}>
-      {Icon && <Icon />}
-      <span>{children}</span>
+      <Icon />
+      <span className="max-sm:hidden">{children}</span>
     </Link>
   );
 };

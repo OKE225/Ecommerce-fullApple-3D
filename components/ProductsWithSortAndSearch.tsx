@@ -52,7 +52,7 @@ const ProductsWithSortAndSearch = ({
 
   return (
     <div>
-      <div className="flex items-center justify-between gap-4 mb-15">
+      <div className="flex items-center justify-between gap-4 mb-10 max-md:mb-5 max-sm:flex-col max-sm:items-end">
         <InputGroup>
           <InputGroupInput
             type="text"
@@ -79,7 +79,7 @@ const ProductsWithSortAndSearch = ({
         </Select>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+      <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
         {sortedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
