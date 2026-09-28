@@ -1,6 +1,6 @@
 "use client";
 
-import { Apple, ShoppingBag, UserRound, LayoutDashboard } from "lucide-react";
+import { Apple, ShoppingBag, LayoutDashboard } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,7 @@ import CategoryMenu from "./CategoryMenu";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useUserRole } from "@/context/UserRoleContext";
+import ProfileDropdown from "./ProfileDropdown";
 
 const Navbar = () => {
   const { items } = useCart();
@@ -66,11 +67,7 @@ const Navbar = () => {
 
           <Separator orientation="vertical" className="mx-1 h-6 my-auto" />
 
-          <Link href="/profile" className="rounded-full">
-            <Button variant="ghost" size="icon">
-              <UserRound />
-            </Button>
-          </Link>
+          <ProfileDropdown />
         </div>
       </div>
 
