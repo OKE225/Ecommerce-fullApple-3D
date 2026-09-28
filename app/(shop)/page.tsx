@@ -4,7 +4,7 @@ import MacBookNeoSection from "@/components/MacBookNeoSection";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col gap-25">
+    <main className="flex flex-col gap-20">
       <IPhone18ProMaxSection />
 
       <IPhone17ProMaxSection />

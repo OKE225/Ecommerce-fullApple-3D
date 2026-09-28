@@ -9,7 +9,7 @@ export default function ShopLayout({
   return (
     <>
       <Navbar />
-      <main className="my-25">{children}</main>
+      <main className="my-20">{children}</main>
       <Footer />
     </>
   );
