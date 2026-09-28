@@ -1,6 +1,4 @@
-import { getUserRole } from "@/lib/supabase/server-role";
 import { getAllProducts } from "@/lib/data/products";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Pencil, Plus } from "lucide-react";
@@ -24,9 +22,6 @@ import {
 import DeleteProductDialog from "@/components/DeleteProductDialog";
 
 export default async function ProductsPage() {
-  const role = await getUserRole();
-  if (role !== "admin") redirect("/");
-
   const products = await getAllProducts();
 
   return (

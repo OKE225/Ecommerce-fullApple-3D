@@ -1,14 +1,19 @@
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { getUserRole } from "@/lib/supabase/server-role";
 import { LayoutDashboard, Package, PlusCircle, Undo2 } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const role = await getUserRole();
+  if (role !== "admin") notFound();
+
   return (
     <>
       <nav className="pt-4">
