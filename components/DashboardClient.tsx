@@ -69,7 +69,7 @@ export default function DashboardClient({
   const [selectedCount, setSelectedCount] = useState<string | null>("10");
 
   const selectedProducts = useMemo(() => {
-    const count = parseInt(selectedCount, 10);
+    const count = selectedCount ? parseInt(selectedCount, 10) : 10;
     return [...products].sort(() => Math.random() - 0.5).slice(0, count);
   }, [products, selectedCount]);
 
