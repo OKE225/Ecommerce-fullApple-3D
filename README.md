@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍏 fullApple - E-commerce
 
-## Getting Started
+FullApple is an unofficial Apple-themed e-commerce project built with Next.js and Supabase. This is not a real store and has no affiliation with Apple Inc. — it's a learning project showcasing modern web development
 
-First, run the development server:
+The platform features a product catalog where users can browse items by category, view detailed specifications, and add products to a shopping cart with real-time updates. Interactive 3D product models. Users can sign up and sign in using Supabase Auth, with protected routes ensuring secure access
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+An admin dashboard allows authorized users to manage the entire product catalog. Admins can add new products, edit existing ones, and delete items with a confirmation dialog. The system includes image upload with automatic square cropping, detailed product specifications (screen, CPU, RAM, battery, dimensions, weight), and server-side form validation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Security is handled through role-based access control and Supabase's Row Level Security policies at the database level. The application is fully responsive and optimized for all screen sizes, with loading states and hover effects. The database consists of four main tables: `categories`, `products`, `related_products`, `user_roles`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Home page](./public/docs/home-page.png)
+![Macbook category page](./public/docs/macbook-category-page.png)
+![iPhone product page](./public/docs/product-page.png)
+![Basket page](./public/docs/basket-page.png)
+![Dashboard for admins page](./public/docs/dashboard-page.png)
+![Add product page](./public/docs/add-product-page.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[**➥ Live**](https://ecommerce-full-apple-3d.vercel.app)
 
-## Learn More
+## ⚙️ Technologies
 
-To learn more about Next.js, take a look at the following resources:
+[![tech stack](https://skillicons.dev/icons?i=nextjs,react,tailwind,ts,js,supabase,postgres,threejs,svg,git,html)](https://skillicons.dev)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
+![](https://img.shields.io/badge/apple-333333?style=for-the-badge&logo=apple&logoColor=white)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⭐ Key Features
 
-## Deploy on Vercel
+- User authentication (sign up, sign in, sign out) with Supabase
+- Product browsing by category (iPhone, MacBook, iPad, All)
+- Product search and sorting
+- Shopping cart with real-time updates
+- Interactive 3D model viewer (iPhone 18 Pro Max and iPhone 17 Pro Max)
+- Admin dashboard for product management
+- CRUD operations for products
+- Role-based access control
+- Responsive design for all devices
+- Database security with RLS
+- Modern design with Shadcn UI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔎 See Also
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [My Website](https://pj-portfolio-cv.vercel.app)
+- [My GitHub profile](https://github.com/OKE225)
